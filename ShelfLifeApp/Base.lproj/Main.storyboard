@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CK5-St-Wwb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Lista de Produtos" id="jMp-xX-VTs"/>
+                    <tabBarItem key="tabBarItem" title="Lista de Produtos" image="shelves 2" id="jMp-xX-VTs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KT-Io-9BM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -29,7 +29,7 @@
         <!--Validades-->
         <scene sceneID="1RG-1O-ywF">
             <objects>
-                <viewController id="kBk-iM-EwQ" sceneMemberID="viewController">
+                <viewController id="kBk-iM-EwQ" customClass="ValidadesViewController" customModule="ShelfLifeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WbU-yE-OUm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,14 +45,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hoje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9E-ex-CCj">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hoje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9E-ex-CCj">
                                                     <rect key="frame" x="20" y="24" width="82" height="45"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="37"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s9E-ex-CCj" firstAttribute="top" secondItem="OkL-eB-eTj" secondAttribute="topMargin" constant="-31" id="ac9-fo-Jud"/>
+                                                <constraint firstItem="s9E-ex-CCj" firstAttribute="leading" secondItem="OkL-eB-eTj" secondAttribute="leadingMargin" id="hKt-eT-BnV"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -70,7 +73,8 @@
                     <navigationItem key="navigationItem" title="Validades" id="hVa-gP-4xi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="88D-nK-1ri">
                             <connections>
-                                <segue destination="4Z2-gz-Ozo" kind="show" id="nlr-qQ-eN2"/>
+                                <action selector="addButton:" destination="q0l-A7-6Gl" id="ma3-x8-hjI"/>
+                                <segue destination="4Z2-gz-Ozo" kind="show" id="ApX-VO-7tC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -79,6 +83,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfN-Zh-iMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="q0l-A7-6Gl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2608.6956521739135" y="-842.41071428571422"/>
         </scene>
@@ -104,13 +109,33 @@
                     <view key="view" contentMode="scaleToFill" id="0Iz-Sy-bc4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nOt-fH-KxE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fWt-kS-PWA">
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fWt-kS-PWA" firstAttribute="bottom" secondItem="Gip-gM-oLw" secondAttribute="bottom" id="6DJ-at-4wN"/>
+                            <constraint firstItem="nOt-fH-KxE" firstAttribute="trailing" secondItem="Gip-gM-oLw" secondAttribute="trailing" id="8Aa-EX-M8R"/>
+                            <constraint firstItem="fWt-kS-PWA" firstAttribute="leading" secondItem="Gip-gM-oLw" secondAttribute="leading" id="SXi-jc-vQr"/>
+                            <constraint firstItem="fWt-kS-PWA" firstAttribute="top" secondItem="nOt-fH-KxE" secondAttribute="bottom" id="mHZ-hf-uaa"/>
+                            <constraint firstItem="nOt-fH-KxE" firstAttribute="leading" secondItem="Gip-gM-oLw" secondAttribute="leading" id="nHh-Ve-CNO"/>
+                            <constraint firstItem="fWt-kS-PWA" firstAttribute="trailing" secondItem="Gip-gM-oLw" secondAttribute="trailing" id="qoo-Wv-1cY"/>
+                            <constraint firstItem="fWt-kS-PWA" firstAttribute="top" secondItem="nOt-fH-KxE" secondAttribute="bottom" id="sUV-2D-LW7"/>
+                            <constraint firstItem="nOt-fH-KxE" firstAttribute="top" secondItem="Gip-gM-oLw" secondAttribute="top" id="ywM-i6-B7r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gip-gM-oLw"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P8o-cW-Ptm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3591" y="-842"/>
+            <point key="canvasLocation" x="3589.8550724637685" y="-842.41071428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mcU-Rq-1mf">
@@ -142,7 +167,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HjT-HZ-94T"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Configurações" id="c4y-bl-o7I"/>
+                    <tabBarItem key="tabBarItem" title="Configurações" image="settings" id="c4y-bl-o7I"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNz-yv-JAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,7 +183,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4d8-EJ-zJt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Minhas Compras" id="wf4-oq-Sae"/>
+                    <tabBarItem key="tabBarItem" title="Minhas Compras" image="shopping-bag" id="wf4-oq-Sae"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqh-PJ-Hqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,7 +193,7 @@
         <scene sceneID="m4x-yf-ZkN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M5J-OJ-nBI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Validades" id="W2m-Yf-iKp"/>
+                    <tabBarItem key="tabBarItem" title="Validades" image="validadesIcon" id="W2m-Yf-iKp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="suD-M9-ODc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -184,4 +209,10 @@
             <point key="canvasLocation" x="1773.913043478261" y="-842.41071428571422"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="24" height="24"/>
+        <image name="shelves 2" width="32" height="32"/>
+        <image name="shopping-bag" width="32" height="32"/>
+        <image name="validadesIcon" width="32" height="32"/>
+    </resources>
 </document>
