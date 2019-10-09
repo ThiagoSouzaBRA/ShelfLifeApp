@@ -1,20 +1,21 @@
 //
-//  ViewController.swift
+//  ValidadesViewController.swift
 //  ShelfLifeApp
 //
-//  Created by Aluno Mack on 07/10/19.
+//  Created by Aluno Mack on 08/10/19.
 //  Copyright © 2019 TheLastFoundation. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ValidadesViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
+    
 
 }
-

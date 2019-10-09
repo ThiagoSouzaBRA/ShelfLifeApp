@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5513500B234CA8E200F534D0 /* ValidadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513500A234CA8E200F534D0 /* ValidadesViewController.swift */; };
 		55E0B36C234B5F650067D3D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0B36B234B5F650067D3D6 /* AppDelegate.swift */; };
-		55E0B36E234B5F650067D3D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0B36D234B5F650067D3D6 /* ViewController.swift */; };
 		55E0B371234B5F650067D3D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E0B36F234B5F650067D3D6 /* Main.storyboard */; };
 		55E0B374234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55E0B372234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld */; };
 		55E0B376234B5F680067D3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E0B375234B5F680067D3D6 /* Assets.xcassets */; };
@@ -16,9 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5513500A234CA8E200F534D0 /* ValidadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidadesViewController.swift; sourceTree = "<group>"; };
 		55E0B368234B5F650067D3D6 /* ShelfLifeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShelfLifeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E0B36B234B5F650067D3D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55E0B36D234B5F650067D3D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		55E0B370234B5F650067D3D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55E0B373234B5F650067D3D6 /* ShelfLifeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShelfLifeApp.xcdatamodel; sourceTree = "<group>"; };
 		55E0B375234B5F680067D3D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,8 +56,8 @@
 		55E0B36A234B5F650067D3D6 /* ShelfLifeApp */ = {
 			isa = PBXGroup;
 			children = (
+				5513500A234CA8E200F534D0 /* ValidadesViewController.swift */,
 				55E0B36B234B5F650067D3D6 /* AppDelegate.swift */,
-				55E0B36D234B5F650067D3D6 /* ViewController.swift */,
 				55E0B36F234B5F650067D3D6 /* Main.storyboard */,
 				55E0B375234B5F680067D3D6 /* Assets.xcassets */,
 				55E0B377234B5F680067D3D6 /* LaunchScreen.storyboard */,
@@ -138,8 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5513500B234CA8E200F534D0 /* ValidadesViewController.swift in Sources */,
 				55E0B374234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld in Sources */,
-				55E0B36E234B5F650067D3D6 /* ViewController.swift in Sources */,
 				55E0B36C234B5F650067D3D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
