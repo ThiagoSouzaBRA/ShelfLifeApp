@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5510DFBA234E18660043D25F /* PrimeiraTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510DFB9234E18660043D25F /* PrimeiraTela.swift */; };
+		5510DFBC234E1DE70043D25F /* DiasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510DFBB234E1DE70043D25F /* DiasTableViewCell.swift */; };
 		5513500B234CA8E200F534D0 /* ValidadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513500A234CA8E200F534D0 /* ValidadesViewController.swift */; };
+		5513500F234CD3AE00F534D0 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513500E234CD3AE00F534D0 /* DatePickerViewController.swift */; };
 		55E0B36C234B5F650067D3D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0B36B234B5F650067D3D6 /* AppDelegate.swift */; };
 		55E0B371234B5F650067D3D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E0B36F234B5F650067D3D6 /* Main.storyboard */; };
 		55E0B374234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55E0B372234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld */; };
@@ -16,7 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5510DFB9234E18660043D25F /* PrimeiraTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeiraTela.swift; sourceTree = "<group>"; };
+		5510DFBB234E1DE70043D25F /* DiasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasTableViewCell.swift; sourceTree = "<group>"; };
 		5513500A234CA8E200F534D0 /* ValidadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidadesViewController.swift; sourceTree = "<group>"; };
+		5513500E234CD3AE00F534D0 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		55E0B368234B5F650067D3D6 /* ShelfLifeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShelfLifeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E0B36B234B5F650067D3D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E0B370234B5F650067D3D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,8 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				5513500A234CA8E200F534D0 /* ValidadesViewController.swift */,
+				5510DFBB234E1DE70043D25F /* DiasTableViewCell.swift */,
+				5510DFB9234E18660043D25F /* PrimeiraTela.swift */,
 				55E0B36B234B5F650067D3D6 /* AppDelegate.swift */,
 				55E0B36F234B5F650067D3D6 /* Main.storyboard */,
+				5513500E234CD3AE00F534D0 /* DatePickerViewController.swift */,
 				55E0B375234B5F680067D3D6 /* Assets.xcassets */,
 				55E0B377234B5F680067D3D6 /* LaunchScreen.storyboard */,
 				55E0B37A234B5F680067D3D6 /* Info.plist */,
@@ -138,8 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5510DFBA234E18660043D25F /* PrimeiraTela.swift in Sources */,
+				5513500F234CD3AE00F534D0 /* DatePickerViewController.swift in Sources */,
 				5513500B234CA8E200F534D0 /* ValidadesViewController.swift in Sources */,
 				55E0B374234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld in Sources */,
+				5510DFBC234E1DE70043D25F /* DiasTableViewCell.swift in Sources */,
 				55E0B36C234B5F650067D3D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
