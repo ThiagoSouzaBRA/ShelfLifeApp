@@ -19,10 +19,16 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        table.separatorColor = UIColor.white
+        table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
 
         // Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 114
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (diasSemana.count)

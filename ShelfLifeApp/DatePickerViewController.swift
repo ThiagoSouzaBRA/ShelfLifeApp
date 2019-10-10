@@ -10,13 +10,37 @@ import UIKit
 
 class DatePickerViewController: UIViewController {
 
+    @IBOutlet weak var inputNome: UITextField!{
+        didSet {
+            inputNome.tintColor = UIColor.black
+            inputNome.setIcon(UIImage(named: "validadeInput")!)
+        }
+        
+    }
+    
+    @IBOutlet weak var nomeInput: UITextField!{
+        didSet {
+            nomeInput.tintColor = UIColor.lightGray
+            nomeInput.setIcon(UIImage(named: "leiteInput")!)
+        }
+    }
+    
+    @IBOutlet weak var categoriaOutlet: UITextField!{
+        didSet {
+            categoriaOutlet.tintColor = UIColor.lightGray
+            categoriaOutlet.setIcon(UIImage(named: "categoriaInput")!)
+        }
+        
+    }
+    
+    
     
     @IBOutlet weak var inputDate: UITextField!
     
     private var datePicker: UIDatePicker?
     
     
-    
+//date picker
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,9 +54,7 @@ class DatePickerViewController: UIViewController {
         
         inputDate.inputView = datePicker
         
-        
-
-        // Do any additional setup after loading the view.
+    
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
@@ -49,7 +71,20 @@ class DatePickerViewController: UIViewController {
         view.endEditing(true)
         
     }
-    
 
 
+
+}
+//colocando uma pequena imagem no TextFiel da data
+extension UITextField {
+    func setIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame:
+            CGRect(x: 10, y: 5, width: 20, height: 20))
+        iconView.image = image
+        let iconContainerView: UIView = UIView(frame:
+            CGRect(x: 20, y: 0, width: 30, height: 30))
+        iconContainerView.addSubview(iconView)
+        leftView = iconContainerView
+        leftViewMode = .always
+    }
 }
