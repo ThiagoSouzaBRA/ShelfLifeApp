@@ -16,6 +16,7 @@
 		55E0B374234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55E0B372234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld */; };
 		55E0B376234B5F680067D3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E0B375234B5F680067D3D6 /* Assets.xcassets */; };
 		55E0B379234B5F680067D3D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E0B377234B5F680067D3D6 /* LaunchScreen.storyboard */; };
+		55EB8BA32350B39600158032 /* ListaCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB8BA22350B39600158032 /* ListaCatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		55E0B375234B5F680067D3D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55E0B378234B5F680067D3D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55E0B37A234B5F680067D3D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55EB8BA22350B39600158032 /* ListaCatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaCatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				55E0B377234B5F680067D3D6 /* LaunchScreen.storyboard */,
 				55E0B37A234B5F680067D3D6 /* Info.plist */,
 				55E0B372234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld */,
+				55EB8BA22350B39600158032 /* ListaCatViewController.swift */,
 			);
 			path = ShelfLifeApp;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				55E0B374234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld in Sources */,
 				5510DFBC234E1DE70043D25F /* DiasTableViewCell.swift in Sources */,
 				55E0B36C234B5F650067D3D6 /* AppDelegate.swift in Sources */,
+				55EB8BA32350B39600158032 /* ListaCatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

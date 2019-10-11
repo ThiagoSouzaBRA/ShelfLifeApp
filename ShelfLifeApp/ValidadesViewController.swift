@@ -27,7 +27,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 114
+        return 125
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
