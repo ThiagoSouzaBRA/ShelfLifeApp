@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5510DFBC234E1DE70043D25F /* DiasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510DFBB234E1DE70043D25F /* DiasTableViewCell.swift */; };
 		5510DFBE234F5AFD0043D25F /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510DFBD234F5AFD0043D25F /* RoundButton.swift */; };
+		5510DFD1235F19E40043D25F /* Produto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510DFCF235F19E40043D25F /* Produto+CoreDataClass.swift */; };
+		5510DFD2235F19E40043D25F /* Produto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510DFD0235F19E40043D25F /* Produto+CoreDataProperties.swift */; };
 		5513500B234CA8E200F534D0 /* ValidadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513500A234CA8E200F534D0 /* ValidadesViewController.swift */; };
 		5513500F234CD3AE00F534D0 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513500E234CD3AE00F534D0 /* DatePickerViewController.swift */; };
 		55E0B36C234B5F650067D3D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0B36B234B5F650067D3D6 /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		5510DFBB234E1DE70043D25F /* DiasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasTableViewCell.swift; sourceTree = "<group>"; };
 		5510DFBD234F5AFD0043D25F /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		5510DFCF235F19E40043D25F /* Produto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Produto+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5510DFD0235F19E40043D25F /* Produto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Produto+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5513500A234CA8E200F534D0 /* ValidadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidadesViewController.swift; sourceTree = "<group>"; };
 		5513500E234CD3AE00F534D0 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		55E0B368234B5F650067D3D6 /* ShelfLifeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShelfLifeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +68,8 @@
 		55E0B36A234B5F650067D3D6 /* ShelfLifeApp */ = {
 			isa = PBXGroup;
 			children = (
+				5510DFCF235F19E40043D25F /* Produto+CoreDataClass.swift */,
+				5510DFD0235F19E40043D25F /* Produto+CoreDataProperties.swift */,
 				5513500A234CA8E200F534D0 /* ValidadesViewController.swift */,
 				5510DFBB234E1DE70043D25F /* DiasTableViewCell.swift */,
 				55E0B36B234B5F650067D3D6 /* AppDelegate.swift */,
@@ -156,7 +162,9 @@
 				55E0B374234B5F650067D3D6 /* ShelfLifeApp.xcdatamodeld in Sources */,
 				5510DFBC234E1DE70043D25F /* DiasTableViewCell.swift in Sources */,
 				55E0B36C234B5F650067D3D6 /* AppDelegate.swift in Sources */,
+				5510DFD2235F19E40043D25F /* Produto+CoreDataProperties.swift in Sources */,
 				55EB8BA32350B39600158032 /* ListaCatViewController.swift in Sources */,
+				5510DFD1235F19E40043D25F /* Produto+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
