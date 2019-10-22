@@ -12,6 +12,8 @@ import CoreData
 
 class DatePickerViewController: UIViewController {
     
+    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     
     
 //customizacao validade input
@@ -76,6 +78,32 @@ class DatePickerViewController: UIViewController {
         view.endEditing(true)
         
     }
+//BOTAO SALVAR
+    @IBAction func saveButton(_ sender: Any) {
+        
+        //pegando os valores dos textfields
+        let nome = self.nomeInput!.text
+        let dataValidade = self.datePicker?.date
+        let categoria = Int(self.categoriaOutlet.text!)
+        
+        let novoProduto = NSEntityDescription.insertNewObject(forEntityName: "Produto", into: context)
+        
+        novoProduto.setValue(self.nomeInput!.text, forKey: "nome")
+        novoProduto.setValue(self.datePicker?.date, forKey: "dataValidade")
+        novoProduto.setValue((Int(self.categoriaOutlet!.text!)), forKey: "categoria")
+        
+        do{
+            try context.save()
+            self.nomeInput!.text = ""
+            self.datePicker?.date
+            Int(self.categoriaOutlet.text!)
+            
+        }catch{
+            print(error)
+        }
+        
+    }
+    
 
 
 

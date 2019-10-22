@@ -15,7 +15,9 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var diasSemana = ["Hoje", "Amanha", "3 dias", "1 semana"]
     
-    var produtos = [["ovo", "leite", "bacon"], ["lalal", "laka", "sei la"], ["pao", "palmito", "miojo"], ["ovo", "lalala", "nao sei"]]
+    //var people: [NSManagedObject] = []
+    
+    var produtos = [ [""], [""], [""], [""] ]
     
     
     override func viewDidLoad() {
@@ -56,7 +58,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
     {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "Futura", size: 35)!
+        header.textLabel?.font = UIFont(name: "Arial", size: 35)!
         header.textLabel?.textColor = UIColor.black
     }
     
