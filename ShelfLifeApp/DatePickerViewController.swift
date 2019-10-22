@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import CoreData
+
 
 class DatePickerViewController: UIViewController {
-
+    
+    
+    
+//customizacao validade input
     @IBOutlet weak var inputNome: UITextField!{
         didSet {
             inputNome.tintColor = UIColor.black
@@ -17,14 +22,14 @@ class DatePickerViewController: UIViewController {
         }
         
     }
-    
+//customizacao nome input
     @IBOutlet weak var nomeInput: UITextField!{
         didSet {
             nomeInput.tintColor = UIColor.lightGray
             nomeInput.setIcon(UIImage(named: "leiteInput")!)
         }
     }
-    
+//customizacao categoria input
     @IBOutlet weak var categoriaOutlet: UITextField!{
         didSet {
             categoriaOutlet.tintColor = UIColor.lightGray
