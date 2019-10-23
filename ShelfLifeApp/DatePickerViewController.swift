@@ -82,6 +82,7 @@ class DatePickerViewController: UIViewController {
     @IBAction func saveButton(_ sender: Any) {
         
         //pegando os valores dos textfields
+        
         let nome = self.nomeInput!.text
         let dataValidade = self.datePicker?.date
         let categoria = Int(self.categoriaOutlet.text!)
@@ -95,8 +96,9 @@ class DatePickerViewController: UIViewController {
         do{
             try context.save()
             self.nomeInput!.text = ""
-            self.datePicker?.date
-            Int(self.categoriaOutlet.text!)
+            //self.datePicker?.date = Date()
+            //self.categoriaOutlet.text! = String(1)
+            print("OK")
             
         }catch{
             print(error)
