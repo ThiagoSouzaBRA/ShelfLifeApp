@@ -36,35 +36,42 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         self.fetchData()
         self.table.reloadData()
         
-        loadPackage()
-        sortPackages()
+        
+        //loadPackage()
+        //sortPackages()
 
         // Do any additional setup after loading the view.
         
         
     }
+    
     func loadPackage(){
-        for i in 0...14{
+        for i in 0...3{
             let dado = produtosArray[i]
             
-            let gregorian = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
-            let components = gregorian?.components(NSCalendar.Unit.day, from: Date(), to: dado.dataValidade!, options: .matchFirst)
+            //let gregorian = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
+            //let components = gregorian?.components(NSCalendar.Unit.day, from: Date(), to: dado.dataValidade!, options: .matchFirst)
             
-           
+            let diaAtual = Date()
+            let diaFinal = dado.dataValidade!
             
-            if(components?.day == 0){
+            let Dias = Calendar.current.dateComponents([.day], from: diaAtual, to: diaFinal).day!
+             
+            
+            
+            if(Dias == 0){
                 hoje.append((dado.nome!,dado.dataValidade!))
             }
             else
-            if(components?.day == 1){
-                    amanha.append((dado.nome!,dado.dataValidade!))
+            if(Dias == 1){
+                amanha.append((dado.nome!,dado.dataValidade!))
             }
             else
-            if((components?.day)! > 1 && (components?.day)! <= 3){
+            if((Dias) > 1 && (Dias) <= 3){
                 dia3.append((dado.nome!,dado.dataValidade!))
             }
             else
-            if((components?.day)! > 3 && (components?.day)! <= 7){
+            if((Dias) > 3 && (Dias) <= 7){
                 dia7.append((dado.nome!,dado.dataValidade!))
             }
             
