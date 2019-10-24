@@ -43,16 +43,38 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
         if produtosArray2.count > 0 {
             
                 for i in 0...(produtosArray2.count-1){
-                   
-                    if(produtosArray2[i].categoria == identificadorCat){
+                    
+                    //Todos
+                    if(identificadorCat == 0){
                         lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!))
                     }
-
+                    else // Adicionados Recentemente
+                    if(identificadorCat == 1){
+                        lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!))
+                    }
+                    else // Geladeira
+                    if(identificadorCat == 2 && produtosArray2[i].categoria == 2){
+                        lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!))
+                    }
+                    else // Despensa
+                    if(identificadorCat == 3 && produtosArray2[i].categoria == 3){
+                        lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!))
+                    }
+                    else // Itens Vencidos
+                    if(identificadorCat == 4){
+                        
+                    }
+                    else // Outros
+                    if(identificadorCat == 5 && produtosArray2[i].categoria == 5){
+                        lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!))
+                    }
+                    
                     
                 }
         }
     }
     
+    //Função Utilizada para ordenar a lista
     func sortPackages(){
         
         ordemLista = lista.sorted { (e1, e2) -> Bool in
