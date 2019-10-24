@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55101FE8236212A7002240B8 /* ListaProdutosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55101FE7236212A7002240B8 /* ListaProdutosTableViewCell.swift */; };
+		55101FEA23621FD3002240B8 /* TodosOsItens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55101FE923621FD3002240B8 /* TodosOsItens.swift */; };
 		5510DFBC234E1DE70043D25F /* DiasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510DFBB234E1DE70043D25F /* DiasTableViewCell.swift */; };
 		5510DFBE234F5AFD0043D25F /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510DFBD234F5AFD0043D25F /* RoundButton.swift */; };
 		5510DFD42361DCFB0043D25F /* ListaDeProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510DFD32361DCFB0043D25F /* ListaDeProdutosViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55101FE7236212A7002240B8 /* ListaProdutosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaProdutosTableViewCell.swift; sourceTree = "<group>"; };
+		55101FE923621FD3002240B8 /* TodosOsItens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosOsItens.swift; sourceTree = "<group>"; };
 		5510DFBB234E1DE70043D25F /* DiasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasTableViewCell.swift; sourceTree = "<group>"; };
 		5510DFBD234F5AFD0043D25F /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		5510DFD32361DCFB0043D25F /* ListaDeProdutosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeProdutosViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +74,9 @@
 				5510DFBB234E1DE70043D25F /* DiasTableViewCell.swift */,
 				55E0B36B234B5F650067D3D6 /* AppDelegate.swift */,
 				55E0B36F234B5F650067D3D6 /* Main.storyboard */,
+				55101FE7236212A7002240B8 /* ListaProdutosTableViewCell.swift */,
 				5510DFD32361DCFB0043D25F /* ListaDeProdutosViewController.swift */,
+				55101FE923621FD3002240B8 /* TodosOsItens.swift */,
 				5513500E234CD3AE00F534D0 /* DatePickerViewController.swift */,
 				5510DFBD234F5AFD0043D25F /* RoundButton.swift */,
 				55E0B375234B5F680067D3D6 /* Assets.xcassets */,
@@ -161,6 +167,8 @@
 				5510DFBC234E1DE70043D25F /* DiasTableViewCell.swift in Sources */,
 				55E0B36C234B5F650067D3D6 /* AppDelegate.swift in Sources */,
 				55EB8BA32350B39600158032 /* ListaCatViewController.swift in Sources */,
+				55101FE8236212A7002240B8 /* ListaProdutosTableViewCell.swift in Sources */,
+				55101FEA23621FD3002240B8 /* TodosOsItens.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
