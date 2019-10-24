@@ -18,11 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Captura de Tela 2019-10-22 às 12.11.05" translatesAutoresizingMaskIntoConstraints="NO" id="9L0-1E-GnX">
-                                <rect key="frame" x="-17" y="246" width="448" height="580"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organize e adicione" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToA-8L-oPn">
                                 <rect key="frame" x="0.0" y="126" width="374" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -30,9 +25,8 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="novos produtos ;)" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOs-na-EGh">
-                                <rect key="frame" x="0.0" y="159" width="374" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="novos produtos ;)" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOs-na-EGh">
+                                <rect key="frame" x="0.0" y="180" width="374" height="39"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -44,6 +38,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Pko-Ol-CSQ" kind="show" id="0Bb-wM-qtM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnF-Tw-GBo" customClass="CategoriasButton" customModule="ShelfLifeApp" customModuleProvider="target">
                                 <rect key="frame" x="147" y="341" width="120" height="120"/>
@@ -52,6 +49,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Pko-Ol-CSQ" kind="show" id="KWm-Z5-1Rq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRn-Pn-BgG" customClass="CategoriasButton" customModule="ShelfLifeApp" customModuleProvider="target">
                                 <rect key="frame" x="284" y="341" width="120" height="120"/>
@@ -60,6 +60,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Pko-Ol-CSQ" kind="show" id="1hs-6e-Lcw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIC-AV-jSs" customClass="CategoriasButton" customModule="ShelfLifeApp" customModuleProvider="target">
                                 <rect key="frame" x="10" y="535" width="120" height="120"/>
@@ -68,6 +71,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Pko-Ol-CSQ" kind="show" id="Vcg-5v-xAl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXK-EI-CFb" customClass="CategoriasButton" customModule="ShelfLifeApp" customModuleProvider="target">
                                 <rect key="frame" x="147" y="535" width="120" height="120"/>
@@ -76,6 +82,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Pko-Ol-CSQ" kind="show" id="DZp-bx-Rq4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Todos os Itens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeE-vJ-1nW">
                                 <rect key="frame" x="10" y="467" width="120" height="21"/>
@@ -138,6 +147,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Pko-Ol-CSQ" kind="show" id="R8h-fL-Z4Q"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="list" translatesAutoresizingMaskIntoConstraints="NO" id="R22-5U-K7u">
                                 <rect key="frame" x="170" y="369" width="74" height="65"/>
@@ -163,8 +175,17 @@
                                 <rect key="frame" x="302" y="558" width="85" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Captura de Tela 2019-10-22 às 12.11.05" translatesAutoresizingMaskIntoConstraints="NO" id="Hy5-sI-Q4i">
+                                <rect key="frame" x="-8" y="246" width="430" height="578"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hy5-sI-Q4i" firstAttribute="top" secondItem="AOs-na-EGh" secondAttribute="bottom" constant="27" id="65R-2t-ijf"/>
+                            <constraint firstAttribute="trailing" secondItem="Hy5-sI-Q4i" secondAttribute="trailing" constant="-8" id="JbI-ud-OBz"/>
+                            <constraint firstAttribute="bottom" secondItem="Hy5-sI-Q4i" secondAttribute="bottom" constant="72" id="KJ3-kZ-Rds"/>
+                            <constraint firstItem="Hy5-sI-Q4i" firstAttribute="leading" secondItem="zfn-GH-FuF" secondAttribute="leading" constant="-8" id="czU-bw-hlk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CK5-St-Wwb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Lista de Produtos" id="Y4A-Jx-ExW">
@@ -180,8 +201,43 @@
             <point key="canvasLocation" x="2679.7101449275365" y="-160.04464285714286"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="Kfc-15-q07">
+            <objects>
+                <viewController id="Pko-Ol-CSQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SIB-HH-YUg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SX1-RU-eXX">
+                                <rect key="frame" x="20" y="204" width="374" height="692"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="YGe-hL-iYu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YGe-hL-iYu" firstAttribute="top" secondItem="1nF-mO-hOj" secondAttribute="top" id="5fb-kI-W8O"/>
+                            <constraint firstItem="YGe-hL-iYu" firstAttribute="trailing" secondItem="1nF-mO-hOj" secondAttribute="trailing" id="5jc-qc-IV8"/>
+                            <constraint firstAttribute="bottom" secondItem="SX1-RU-eXX" secondAttribute="bottom" id="H5Y-f7-Tii"/>
+                            <constraint firstItem="YGe-hL-iYu" firstAttribute="leading" secondItem="1nF-mO-hOj" secondAttribute="leading" id="Rph-um-UQx"/>
+                            <constraint firstItem="1nF-mO-hOj" firstAttribute="trailing" secondItem="SX1-RU-eXX" secondAttribute="trailing" constant="20" id="edj-xJ-Hx0"/>
+                            <constraint firstItem="SX1-RU-eXX" firstAttribute="top" secondItem="YGe-hL-iYu" secondAttribute="bottom" constant="60" id="r1D-Xz-eMD"/>
+                            <constraint firstItem="SX1-RU-eXX" firstAttribute="leading" secondItem="1nF-mO-hOj" secondAttribute="leading" constant="20" id="xJS-HV-qjX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1nF-mO-hOj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p4e-He-qHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3618.840579710145" y="-160.04464285714286"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tpu-jz-Gew">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLz-Ci-HAZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="0MW-W4-2sj" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BL9-3o-gGR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -339,9 +395,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="fRG-io-u0I"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sLz-Ci-HAZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3589.8550724637685" y="-160.04464285714286"/>
+            <point key="canvasLocation" x="3800" y="604"/>
         </scene>
         <!--Validades-->
         <scene sceneID="1RG-1O-ywF">
@@ -583,7 +638,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Captura de Tela 2019-10-22 às 12.11.05" width="414" height="578"/>
+        <image name="Captura de Tela 2019-10-22 às 12.11.05" width="414" height="578"/>
         <image name="arrow.up" width="60" height="64"/>
         <image name="fridge-2" width="512" height="512"/>
         <image name="infinity" width="512" height="512"/>
@@ -595,6 +650,7 @@
         <image name="warning" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ApX-VO-7tC"/>
+        <segue reference="YGt-40-jrm"/>
+        <segue reference="1hs-6e-Lcw"/>
     </inferredMetricsTieBreakers>
 </document>

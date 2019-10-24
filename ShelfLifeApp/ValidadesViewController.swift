@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class ValidadesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var table: UITableView!
+    
+
     
     var produtosArray:[Produto] = []
     
@@ -33,12 +36,13 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         table.separatorColor = UIColor.white
         table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
-        self.fetchData()
-        self.table.reloadData()
         
         
         //loadPackage()
-        //sortPackages()
+        sortPackages()
+        self.fetchData()
+        self.table.reloadData()
+        print (produtosArray.count)
 
         // Do any additional setup after loading the view.
         
@@ -46,7 +50,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func loadPackage(){
-        for i in 0...3{
+        for i in 0...19{
             let dado = produtosArray[i]
             
             //let gregorian = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
@@ -182,6 +186,21 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         
     
         return(cell)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        if editingStyle == .delete{
+            let row = produtosArray[indexPath.row]
+            context.delete(row)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }
+        do{
+            produtosArray = try context.fetch(Produto.fetchRequest())
+        }catch{
+            print(error)
+        }
         
     }
     

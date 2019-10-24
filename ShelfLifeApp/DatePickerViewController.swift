@@ -10,7 +10,11 @@ import UIKit
 import CoreData
 
 
-class DatePickerViewController: UIViewController {
+class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
+    
+    
+    var pickOption = ["Geladeira", "Despensa", "Outros"]
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -61,6 +65,14 @@ class DatePickerViewController: UIViewController {
         
         inputDate.inputView = datePicker
         
+        //picker categoria
+        var pickerView = UIPickerView()
+        
+        pickerView.delegate = self as? UIPickerViewDelegate
+        
+        categoriaOutlet.inputView = pickerView
+
+        
     
     }
     
@@ -96,8 +108,8 @@ class DatePickerViewController: UIViewController {
         do{
             try context.save()
             self.nomeInput!.text = ""
-            //self.datePicker?.date = Date()
-            //self.categoriaOutlet.text! = String(1)
+            self.categoriaOutlet!.text = ""
+
             print("OK")
             
         }catch{
@@ -105,6 +117,21 @@ class DatePickerViewController: UIViewController {
         }
         
     }
+//picker categoria
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickOption.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickOption[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        categoriaOutlet.text = pickOption[row]
+    }
+    
     
 
 
@@ -122,4 +149,9 @@ extension UITextField {
         leftView = iconContainerView
         leftViewMode = .always
     }
+    
+    
+
+
+
 }
