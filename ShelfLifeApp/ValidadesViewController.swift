@@ -20,15 +20,16 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var diasSemana = ["Hoje", "Amanhã", "3 dias", "1 semana"]
     //var people: [NSManagedObject] = []
-    var hoje:[(String,Date)] = []
-    var amanha:[(String,Date)]  = []
-    var dia3:[(String,Date)] = []
-    var dia7:[(String,Date)] = []
+    //Nome,Data,Posicao Original
+    var hoje:[(String,Date,Int)] = []
+    var amanha:[(String,Date,Int)]  = []
+    var dia3:[(String,Date,Int)] = []
+    var dia7:[(String,Date,Int)] = []
     
-    var ordemHoje:[(String,Date)] = []
-    var ordemAmanha:[(String,Date)] = []
-    var ordemDia3:[(String,Date)] = []
-    var ordemDia7:[(String,Date)] = []
+    var ordemHoje:[(String,Date,Int)] = []
+    var ordemAmanha:[(String,Date,Int)] = []
+    var ordemDia3:[(String,Date,Int)] = []
+    var ordemDia7:[(String,Date,Int)] = []
     
     
     override func viewDidLoad() {
@@ -73,19 +74,19 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                     if(mesmoMes == true){
                         if(Dias == 0){
-                            hoje.append((dado.nome!,dado.dataValidade!))
+                            hoje.append((dado.nome!,dado.dataValidade!,i))
                         }
                         else
                         if(Dias == 1){
-                            amanha.append((dado.nome!,dado.dataValidade!))
+                            amanha.append((dado.nome!,dado.dataValidade!,i))
                         }
                         else
                         if((Dias) > 1 && (Dias) <= 3){
-                            dia3.append((dado.nome!,dado.dataValidade!))
+                            dia3.append((dado.nome!,dado.dataValidade!,i))
                         }
                         else
                         if((Dias) > 3 && (Dias) <= 7){
-                            dia7.append((dado.nome!,dado.dataValidade!))
+                            dia7.append((dado.nome!,dado.dataValidade!,i))
                         }
 
                     }
@@ -213,13 +214,12 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         return true
     }
     
-/*    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        let eventArrayItem = produtosArray[indexPath.row]
+       
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         if editingStyle == .delete {
-            context.delete(eventArrayItem)
             
             do {
                 try context.save()
@@ -228,7 +228,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
     }
-  */
+  
 //fetch
     func fetchData(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
