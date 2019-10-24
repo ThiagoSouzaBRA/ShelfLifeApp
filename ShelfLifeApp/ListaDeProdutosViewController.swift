@@ -16,6 +16,8 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
     
     var identificadorCat = 0
     
+    var titulo:String = "Tela"
+    
     var lista:[(String,Date,Date)] = []
     var ordemLista:[(String,Date,Date)] = []
     
@@ -26,6 +28,9 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        self.title = titulo
+        //self.navigationItem.title = "Meu"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -133,7 +138,7 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
         let cell2 = table2.dequeueReusableCell(withIdentifier: "cell2") as! ListaProdutosTableViewCell;
         
         if(lista.count == 0){
-            cell2.produtoLabel.text = "Não há produtos cadastrados."
+            cell2.produtoLabel.text = "Não há produtos."
             cell2.dataOutlet.text = ""
             return(cell2)
         }

@@ -45,8 +45,6 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
     }
     
-    
-    
     @IBOutlet weak var inputDate: UITextField!
     
     private var datePicker: UIDatePicker?
@@ -73,8 +71,6 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         categoriaOutlet.inputView = pickerView
 
-        
-    
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
