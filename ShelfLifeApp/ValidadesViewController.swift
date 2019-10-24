@@ -33,6 +33,8 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     override func viewDidLoad() {
+        
+        title = "Shelf Life"
         super.viewDidLoad()
         table.separatorColor = UIColor.white
         table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -140,6 +142,8 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         return 1
     }
     
+    
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return diasSemana[section]
@@ -149,7 +153,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         return 20
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 25
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
@@ -216,27 +220,6 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         if editingStyle == .delete {
-            let linha = indexPath.row
-            let secao = indexPath.section
-            
-            if(secao == 0){
-                ordemHoje.remove(at: linha)
-            }
-            else
-            if(secao == 1){
-                ordemAmanha.remove(at: linha)
-            }
-            else
-            if(secao == 2){
-                ordemDia3.remove(at: linha)
-            }
-            else
-            if(secao == 3){
-                ordemDia7.remove(at: linha)
-            }
-            //context.delete(produtosArray[indexPath.row])
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
             
             do {
                 try context.save()
