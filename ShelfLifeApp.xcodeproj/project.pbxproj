@@ -18,6 +18,8 @@
 		55E0B376234B5F680067D3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E0B375234B5F680067D3D6 /* Assets.xcassets */; };
 		55E0B379234B5F680067D3D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E0B377234B5F680067D3D6 /* LaunchScreen.storyboard */; };
 		55EB8BA32350B39600158032 /* ListaCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB8BA22350B39600158032 /* ListaCatViewController.swift */; };
+		55EB8BAA2362271500158032 /* Produto+CoreDataClass.swift in Resources */ = {isa = PBXBuildFile; fileRef = 55EB8BA82362271500158032 /* Produto+CoreDataClass.swift */; };
+		55EB8BAB2362271500158032 /* Produto+CoreDataProperties.swift in Resources */ = {isa = PBXBuildFile; fileRef = 55EB8BA92362271500158032 /* Produto+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		55E0B378234B5F680067D3D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55E0B37A234B5F680067D3D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55EB8BA22350B39600158032 /* ListaCatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaCatViewController.swift; sourceTree = "<group>"; };
+		55EB8BA82362271500158032 /* Produto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Produto+CoreDataClass.swift"; path = "ShelfLifeApp/Produto+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55EB8BA92362271500158032 /* Produto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Produto+CoreDataProperties.swift"; path = "ShelfLifeApp/Produto+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 		55E0B35F234B5F650067D3D6 = {
 			isa = PBXGroup;
 			children = (
+				55EB8BA82362271500158032 /* Produto+CoreDataClass.swift */,
+				55EB8BA92362271500158032 /* Produto+CoreDataProperties.swift */,
 				55E0B36A234B5F650067D3D6 /* ShelfLifeApp */,
 				55E0B369234B5F650067D3D6 /* Products */,
 			);
@@ -140,6 +146,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55EB8BAA2362271500158032 /* Produto+CoreDataClass.swift in Resources */,
+				55EB8BAB2362271500158032 /* Produto+CoreDataProperties.swift in Resources */,
 				55E0B379234B5F680067D3D6 /* LaunchScreen.storyboard in Resources */,
 				55E0B376234B5F680067D3D6 /* Assets.xcassets in Resources */,
 				55E0B371234B5F650067D3D6 /* Main.storyboard in Resources */,
