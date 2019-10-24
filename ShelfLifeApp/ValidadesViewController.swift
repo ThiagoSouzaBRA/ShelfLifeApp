@@ -33,7 +33,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         
-        title = "Shelf Life"
+        title = "Validades"
         super.viewDidLoad()
         table.separatorColor = UIColor.white
         table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
