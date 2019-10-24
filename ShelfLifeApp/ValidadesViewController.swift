@@ -18,7 +18,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     var produtosArray:[Produto] = []
     
     
-    var diasSemana = ["Hoje", "Amanha", "3 dias", "1 semana"]
+    var diasSemana = ["Hoje", "Amanhã", "3 dias", "1 semana"]
     //var people: [NSManagedObject] = []
     var hoje:[(String,Date)] = []
     var amanha:[(String,Date)]  = []
@@ -37,19 +37,29 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.fetchData()
         
+
+        self.fetchData()
         loadPackage()
         sortPackages()
-        self.table.reloadData()
+        table.reloadData()
+
+        
     }
+    
+
     
     func loadPackage(){
 
         if produtosArray.count > 0 {
+            hoje = []
+            amanha = []
+            dia3 = []
+            dia7 = []
                 for i in 0...(produtosArray.count-1){
                     let dado = produtosArray[i]
                     
@@ -152,7 +162,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         let dataFormatter = DateFormatter()
         dataFormatter.dateFormat = "dd/MM/yyyy"
         let cell = table.dequeueReusableCell(withIdentifier: "cell") as! DiasTableViewCell;
-        let oneRecord = produtosArray[indexPath.row]
+        //let oneRecord = produtosArray[indexPath.row]
         //let data = dataFormatter.string(from: oneRecord.dataValidade!)
         //cell.cellLabel!.text = oneRecord.nome! + " " + data
         //cell.cellLabel.text = produtos[indexPath.section][indexPath.row]

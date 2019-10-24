@@ -29,10 +29,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShelfLifeApp/ValidadesViewController.swift"
+            timestampString = "593628391.322729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -41,14 +42,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7B763F8A-680C-4549-B84F-9330DBFB36C8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShelfLifeApp/ValidadesViewController.swift"
+            timestampString = "593628391.322804"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "loadPackage()"
             landmarkType = "7">
          </BreakpointContent>

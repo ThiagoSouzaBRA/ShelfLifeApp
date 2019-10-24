@@ -10,11 +10,15 @@ import UIKit
 
 @IBDesignable class RoundButton: UIButton
 {
+
+    
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
         updateCornerRadius()
     }
+    
     
     @IBInspectable var rounded: Bool = false {
         didSet {
@@ -24,6 +28,12 @@ import UIKit
     
     func updateCornerRadius() {
         layer.cornerRadius = rounded ? frame.size.height / 2 : 0
+    }
+    func shadowButton() {
+        
+        var newColor = UIColor.black.cgColor
+        
+        layer.shadowColor = UIColor(cgColor: newColor) as! CGColor
     }
 }
 

@@ -9,6 +9,10 @@
 import UIKit
 
 class ListaDeProdutosViewController: UIViewController {
+
+    
+    var produtosArray:[Produto] = []
+    
     @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
@@ -16,6 +20,13 @@ class ListaDeProdutosViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+   // func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //produtosArray.count
+    //}
+    
+    //func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //}
     
 
 
