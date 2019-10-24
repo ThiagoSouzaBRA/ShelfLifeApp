@@ -11,12 +11,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-<<<<<<< HEAD
-            filePath = "ShelfLifeApp/ValidadesViewController.swift"
-            timestampString = "593638625.1974"
-=======
             filePath = "ShelfLifeApp/ListaDeProdutosViewController.swift"
->>>>>>> c142cb07af5fc5dd4c336ab175f5a7e928065554
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -32,12 +28,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-<<<<<<< HEAD
-            filePath = "ShelfLifeApp/ValidadesViewController.swift"
-            timestampString = "593638625.197463"
-=======
             filePath = "ShelfLifeApp/ListaDeProdutosViewController.swift"
->>>>>>> c142cb07af5fc5dd4c336ab175f5a7e928065554
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -54,10 +46,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShelfLifeApp/ListaDeProdutosViewController.swift"
-<<<<<<< HEAD
-            timestampString = "593638625.197511"
-=======
->>>>>>> c142cb07af5fc5dd4c336ab175f5a7e928065554
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -74,14 +63,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShelfLifeApp/ListaDeProdutosViewController.swift"
-<<<<<<< HEAD
-            timestampString = "593638625.197556"
-=======
->>>>>>> c142cb07af5fc5dd4c336ab175f5a7e928065554
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "loadPackage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,10 +80,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShelfLifeApp/ListaDeProdutosViewController.swift"
-<<<<<<< HEAD
-            timestampString = "593638625.197597"
-=======
->>>>>>> c142cb07af5fc5dd4c336ab175f5a7e928065554
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"

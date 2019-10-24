@@ -40,6 +40,7 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
         didSet {
             categoriaOutlet.tintColor = UIColor.lightGray
             categoriaOutlet.setIcon(UIImage(named: "categoriaInput")!)
+            
         }
         
     }
@@ -103,7 +104,19 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         novoProduto.setValue(self.nomeInput!.text, forKey: "nome")
         novoProduto.setValue(self.datePicker?.date, forKey: "dataValidade")
-        novoProduto.setValue((Int(self.categoriaOutlet!.text!)), forKey: "categoria")
+        if(self.categoriaOutlet!.text! == "Geladeira"){
+            novoProduto.setValue(2, forKey: "categoria")
+        }
+        else
+        if(self.categoriaOutlet!.text! == "Despensa"){
+            novoProduto.setValue(3, forKey: "categoria")
+        }
+        else
+        if(self.categoriaOutlet!.text! == "Outros"){
+            novoProduto.setValue(4, forKey: "categoria")
+        }
+        
+        
         
         do{
             try context.save()

@@ -18,7 +18,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     var produtosArray:[Produto] = []
     
     
-    var diasSemana = ["Hoje", "Amanhã", "3 dias", "1 semana"]
+    var diasSemana = ["Hoje", "Amanhã", "3 Dias", "7 Dias"]
     //var people: [NSManagedObject] = []
     //Nome,Data,Posicao Original
     var hoje:[(String,Date,Int)] = []
@@ -128,18 +128,23 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if(section == 0){
+            if(hoje.count == 0){return 1}
             return hoje.count
+            
         }
         else
         if(section == 1){
+            if(amanha.count == 0){return 1}
             return amanha.count
         }
         else
         if(section == 2){
+            if(dia3.count == 0){return 1}
             return dia3.count
         }
         else
         if(section == 3){
+            if(dia7.count == 0){return 1}
             return dia7.count
         }
         return 1
@@ -153,10 +158,10 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 20
+        return 1
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 25
+        return 50
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
@@ -184,27 +189,53 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
        
         
         if(indexPath.section == 0){
+            if(ordemHoje.count == 0){
+                cell.cellLabel.text = "Não há produtos cadastrados."
+                cell.dataLabel.text = ""
+            }
+            else{
             let data = dataFormatter.string(from: ordemHoje[indexPath.row].1)
             cell.cellLabel.text = ordemHoje[indexPath.row].0 
             cell.dataLabel.text = data
+            }
         }
         else
         if(indexPath.section == 1){
-            let data = dataFormatter.string(from: ordemAmanha[indexPath.row].1)
+            if(ordemAmanha.count == 0){
+                cell.cellLabel.text = "Não há produtos cadastrados."
+                cell.dataLabel.text = ""
+            }
+            else{
+            let data = dataFormatter.string(from:ordemAmanha[indexPath.row].1)
             cell.cellLabel.text = ordemAmanha[indexPath.row].0
             cell.dataLabel.text = data
+                
+            }
+                
         }
         else
         if(indexPath.section == 2){
+            if(ordemAmanha.count == 0){
+                cell.cellLabel.text = "Não há produtos cadastrados."
+                cell.dataLabel.text = ""
+            }
+            else{
             let data = dataFormatter.string(from: ordemDia3[indexPath.row].1)
             cell.cellLabel.text = ordemDia3[indexPath.row].0
             cell.dataLabel.text = data
+            }
         }
         else
         if(indexPath.section == 3){
+            if(ordemAmanha.count == 0){
+                cell.cellLabel.text = "Não há produtos cadastrados."
+                cell.dataLabel.text = ""
+            }
+            else{
             let data = dataFormatter.string(from: ordemDia7[indexPath.row].1)
             cell.cellLabel.text = ordemDia7[indexPath.row].0
             cell.dataLabel.text = data
+            }
         }
         
     

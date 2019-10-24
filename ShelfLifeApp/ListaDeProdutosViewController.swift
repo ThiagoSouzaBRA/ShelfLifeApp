@@ -16,8 +16,8 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
     
     var identificadorCat = 0
     
-    var lista:[(String,Date)] = []
-    var ordemLista:[(String,Date)] = []
+    var lista:[(String,Date,Date)] = []
+    var ordemLista:[(String,Date,Date)] = []
     
     @IBOutlet weak var table2: UITableView!
     
@@ -43,21 +43,60 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
         if produtosArray2.count > 0 {
             
                 for i in 0...(produtosArray2.count-1){
-                   
-                    if(produtosArray2[i].categoria == identificadorCat){
-                        lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!))
+                    
+                    //Todos
+                    if(identificadorCat == 0){
+                        lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!,produtosArray2[i].dataRegistro!))
                     }
-
+                    else // Adicionados Recentemente
+                    if(identificadorCat == 1){
+                        lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!,produtosArray2[i].dataRegistro!))
+                    }
+                    else // Geladeira
+                    if(identificadorCat == 2 && produtosArray2[i].categoria == 2){
+                        lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!,produtosArray2[i].dataRegistro!))
+                    }
+                    else // Despensa
+                    if(identificadorCat == 3 && produtosArray2[i].categoria == 3){
+                        lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!,produtosArray2[i].dataRegistro!))
+                    }
+                    else // Itens Vencidos
+                    if(identificadorCat == 4){
+                        
+                    }
+                    else // Outros
+                    if(identificadorCat == 5 && produtosArray2[i].categoria == 5){
+                        lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!,produtosArray2[i].dataRegistro!))
+                    }
+                    
                     
                 }
         }
     }
     
+    //Função Utilizada para ordenar a lista
     func sortPackages(){
         
-        ordemLista = lista.sorted { (e1, e2) -> Bool in
-            e1.1 < e2.1
+        //Adicionados Recentemente
+        if(identificadorCat == 1){
+             ordemLista = lista.sorted { (e1, e2) -> Bool in
+                       e1.2 < e2.2
+                   }
         }
+        else //Itens Vencidos
+        if(identificadorCat == 4){
+            
+             ordemLista = lista.sorted { (e1, e2) -> Bool in
+                       e1.1 < e2.1
+                   }
+        }
+        else{
+            ordemLista = lista.sorted { (e1, e2) -> Bool in
+                       e1.1 < e2.1
+                   }
+        }
+        
+       
         
     }
     
@@ -78,6 +117,11 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
     }
     
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if(lista.count == 0){
+            return 1
+        }
+
         return lista.count
     }
     
@@ -87,6 +131,12 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
         dataFormatter.dateFormat = "dd/MM/yyyy"
         
         let cell2 = table2.dequeueReusableCell(withIdentifier: "cell2") as! ListaProdutosTableViewCell;
+        
+        if(lista.count == 0){
+            cell2.produtoLabel.text = "Não há produtos cadastrados."
+            cell2.dataOutlet.text = ""
+            return(cell2)
+        }
         
         let record = ordemLista[indexPath.row]
         let data = dataFormatter.string(from: record.1)
