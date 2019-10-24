@@ -36,6 +36,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         table.separatorColor = UIColor.white
         table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -166,46 +167,55 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if(indexPath.section == 0){
             let data = dataFormatter.string(from: ordemHoje[indexPath.row].1)
-            cell.cellLabel.text = ordemHoje[indexPath.row].0 + " " + data
+            cell.cellLabel.text = ordemHoje[indexPath.row].0 
+            cell.dataLabel.text = data
         }
         else
         if(indexPath.section == 1){
             let data = dataFormatter.string(from: ordemAmanha[indexPath.row].1)
-            cell.cellLabel.text = ordemAmanha[indexPath.row].0 + " " + data
+            cell.cellLabel.text = ordemAmanha[indexPath.row].0
+            cell.dataLabel.text = data
         }
         else
         if(indexPath.section == 2){
             let data = dataFormatter.string(from: ordemDia3[indexPath.row].1)
-            cell.cellLabel.text = ordemDia3[indexPath.row].0 + " " + data
+            cell.cellLabel.text = ordemDia3[indexPath.row].0
+            cell.dataLabel.text = data
         }
         else
         if(indexPath.section == 3){
             let data = dataFormatter.string(from: ordemDia7[indexPath.row].1)
-            cell.cellLabel.text = ordemDia7[indexPath.row].0 + " " + data
+            cell.cellLabel.text = ordemDia7[indexPath.row].0
+            cell.dataLabel.text = data
         }
         
     
         return(cell)
         
     }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        if editingStyle == .delete{
-            let row = produtosArray[indexPath.row]
-            context.delete(row)
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        }
-        do{
-            produtosArray = try context.fetch(Produto.fetchRequest())
-        }catch{
-            print(error)
-        }
-        
+//      DELETE
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        return true
     }
     
-    
-    
+/*    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let eventArrayItem = produtosArray[indexPath.row]
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        if editingStyle == .delete {
+            context.delete(eventArrayItem)
+            
+            do {
+                try context.save()
+            } catch let error as NSError {
+                print("Error While Deleting Note: \(error.userInfo)")
+            }
+        }
+    }
+  */
+//fetch
     func fetchData(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         

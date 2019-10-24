@@ -200,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="2679.7101449275365" y="-160.04464285714286"/>
         </scene>
-        <!--View Controller-->
+        <!--Lista De Produtos View Controller-->
         <scene sceneID="Kfc-15-q07">
             <objects>
-                <viewController id="Pko-Ol-CSQ" sceneMemberID="viewController">
+                <viewController id="Pko-Ol-CSQ" customClass="ListaDeProdutosViewController" customModule="ShelfLifeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SIB-HH-YUg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -229,6 +229,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1nF-mO-hOj"/>
                     </view>
+                    <connections>
+                        <outlet property="table" destination="SX1-RU-eXX" id="9Ei-Ac-1IB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4e-He-qHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -410,24 +413,41 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="77" id="aLA-jf-Tm9" customClass="DiasTableViewCell" customModule="ShelfLifeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="77" id="aLA-jf-Tm9" customClass="DiasTableViewCell" customModule="ShelfLifeApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aLA-jf-Tm9" id="OkL-eB-eTj">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="76.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="76.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hoje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9E-ex-CCj">
-                                                    <rect key="frame" x="11" y="1" width="274" height="65"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHd-dE-8WZ">
+                                                    <rect key="frame" x="303" y="28" width="111" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="111" id="UL8-TV-vqJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hoje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9E-ex-CCj">
+                                                    <rect key="frame" x="10" y="10" width="43.5" height="56"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="MHd-dE-8WZ" secondAttribute="trailing" id="2kb-bF-mo8"/>
+                                                <constraint firstItem="s9E-ex-CCj" firstAttribute="top" secondItem="OkL-eB-eTj" secondAttribute="top" constant="10" id="9wZ-72-uZb"/>
+                                                <constraint firstItem="MHd-dE-8WZ" firstAttribute="top" secondItem="OkL-eB-eTj" secondAttribute="topMargin" constant="-27" id="YaU-R5-meB"/>
+                                                <constraint firstAttribute="bottom" secondItem="s9E-ex-CCj" secondAttribute="bottom" constant="10.5" id="aaY-Fa-C5A"/>
+                                                <constraint firstItem="MHd-dE-8WZ" firstAttribute="centerY" secondItem="OkL-eB-eTj" secondAttribute="centerY" id="dr8-uN-2V9"/>
+                                                <constraint firstItem="s9E-ex-CCj" firstAttribute="leading" secondItem="OkL-eB-eTj" secondAttribute="leading" constant="10" id="eo7-5Z-hW6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cellLabel" destination="s9E-ex-CCj" id="laQ-0g-aqi"/>
+                                            <outlet property="dataLabel" destination="MHd-dE-8WZ" id="h6o-cK-xSs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -578,7 +598,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itu-kS-nBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3589.8550724637685" y="-1552.2321428571429"/>
+            <point key="canvasLocation" x="3729" y="-1505"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mcU-Rq-1mf">
@@ -650,7 +670,7 @@
         <image name="warning" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YGt-40-jrm"/>
+        <segue reference="ApX-VO-7tC"/>
         <segue reference="1hs-6e-Lcw"/>
     </inferredMetricsTieBreakers>
 </document>

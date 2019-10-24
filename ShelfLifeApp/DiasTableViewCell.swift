@@ -12,6 +12,7 @@ class DiasTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellLabel: UILabel!
     //@IBOutlet weak var myView: UIView!
+    @IBOutlet weak var dataLabel: UILabel!
     
     //let cornerRadius : CGFloat = 25.0
     
