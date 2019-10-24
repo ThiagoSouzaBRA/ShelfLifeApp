@@ -116,7 +116,7 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
             novoProduto.setValue(4, forKey: "categoria")
         }
         
-        
+       novoProduto.setValue(Date(), forKey: "dataRegistro")
         
         do{
             try context.save()

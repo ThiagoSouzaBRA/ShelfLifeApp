@@ -212,7 +212,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         else
         if(indexPath.section == 2){
-            if(ordemAmanha.count == 0){
+            if(ordemDia3.count == 0){
                 cell.cellLabel.text = "Não há produtos cadastrados."
                 cell.dataLabel.text = ""
             }
@@ -224,7 +224,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         else
         if(indexPath.section == 3){
-            if(ordemAmanha.count == 0){
+            if(ordemDia7.count == 0){
                 cell.cellLabel.text = "Não há produtos cadastrados."
                 cell.dataLabel.text = ""
             }

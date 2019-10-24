@@ -287,7 +287,6 @@
         <!--Lista De Produtos View Controller-->
         <scene sceneID="Kfc-15-q07">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p4e-He-qHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Pko-Ol-CSQ" customClass="ListaDeProdutosViewController" customModule="ShelfLifeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SIB-HH-YUg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -373,6 +372,7 @@
                         <outlet property="table2" destination="SX1-RU-eXX" id="fc8-SY-Je8"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p4e-He-qHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3618.840579710145" y="-160.04464285714286"/>
         </scene>
@@ -664,9 +664,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Cadastrar"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="saveButton:" destination="4Z2-gz-Ozo" eventType="touchUpInside" id="YSh-UU-LTi"/>
                                 </connections>
@@ -808,8 +805,6 @@
         <image name="warning-2" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ApX-VO-7tC"/>
-        <segue reference="KWm-Z5-1Rq"/>
         <segue reference="YGt-40-jrm"/>
         <segue reference="0Bb-wM-qtM"/>
     </inferredMetricsTieBreakers>
