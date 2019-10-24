@@ -18,7 +18,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     var produtosArray:[Produto] = []
     
     
-    var diasSemana = ["Hoje", "Amanhã", "3 dias", "1 semana"]
+    var diasSemana = ["Hoje", "Amanhã", "3 Dias", "7 Dias"]
     //var people: [NSManagedObject] = []
     //Nome,Data,Posicao Original
     var hoje:[(String,Date,Int)] = []
@@ -113,6 +113,9 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     //table  view
+    
+
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return diasSemana.count
@@ -155,10 +158,10 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 20
+        return 1
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 25
+        return 50
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
