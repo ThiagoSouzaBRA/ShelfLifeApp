@@ -113,6 +113,9 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     //table  view
+    
+
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return diasSemana.count
