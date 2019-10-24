@@ -36,51 +36,48 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         table.separatorColor = UIColor.white
         table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
-        
-        
-        //loadPackage()
-        sortPackages()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.fetchData()
+        
+        loadPackage()
+        sortPackages()
         self.table.reloadData()
-        print (produtosArray.count)
-
-        // Do any additional setup after loading the view.
-        
-        
     }
     
     func loadPackage(){
-        for i in 0...19{
-            let dado = produtosArray[i]
-            
-            //let gregorian = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
-            //let components = gregorian?.components(NSCalendar.Unit.day, from: Date(), to: dado.dataValidade!, options: .matchFirst)
-            
-            let diaAtual = Date()
-            let diaFinal = dado.dataValidade!
-            
-            let Dias = Calendar.current.dateComponents([.day], from: diaAtual, to: diaFinal).day!
-             
-            
-            
-            if(Dias == 0){
-                hoje.append((dado.nome!,dado.dataValidade!))
-            }
-            else
-            if(Dias == 1){
-                amanha.append((dado.nome!,dado.dataValidade!))
-            }
-            else
-            if((Dias) > 1 && (Dias) <= 3){
-                dia3.append((dado.nome!,dado.dataValidade!))
-            }
-            else
-            if((Dias) > 3 && (Dias) <= 7){
-                dia7.append((dado.nome!,dado.dataValidade!))
-            }
-            
+
+        if produtosArray.count > 0 {
+                for i in 0...(produtosArray.count-1){
+                    let dado = produtosArray[i]
+                    
+                    let formato = DateFormatter()
+                    formato.dateFormat = "MM"
+                    let mesmoMes = formato.string(from: dado.dataValidade!) == formato.string(from: Date())
+                    formato.dateFormat = "dd"
+                    let Dias = Int(formato.string(from: dado.dataValidade!))! - Int(formato.string(from: Date()))!
+                
+                    if(mesmoMes == true){
+                        if(Dias == 0){
+                            hoje.append((dado.nome!,dado.dataValidade!))
+                        }
+                        else
+                        if(Dias == 1){
+                            amanha.append((dado.nome!,dado.dataValidade!))
+                        }
+                        else
+                        if((Dias) > 1 && (Dias) <= 3){
+                            dia3.append((dado.nome!,dado.dataValidade!))
+                        }
+                        else
+                        if((Dias) > 3 && (Dias) <= 7){
+                            dia7.append((dado.nome!,dado.dataValidade!))
+                        }
+
+                    }
+                }
         }
-        print()
     }
     
     func sortPackages(){
@@ -168,20 +165,23 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
        
         
         if(indexPath.section == 0){
-            let data = dataFormatter.string(from: ordemHoje[0].1)
-         cell.cellLabel.text = ordemHoje[indexPath.row].0 + " " + data
+            let data = dataFormatter.string(from: ordemHoje[indexPath.row].1)
+            cell.cellLabel.text = ordemHoje[indexPath.row].0 + " " + data
         }
         else
         if(indexPath.section == 1){
-            cell.cellLabel.text = ordemAmanha[indexPath.row].0
+            let data = dataFormatter.string(from: ordemAmanha[indexPath.row].1)
+            cell.cellLabel.text = ordemAmanha[indexPath.row].0 + " " + data
         }
         else
         if(indexPath.section == 2){
-            cell.cellLabel.text = ordemDia3[indexPath.row].0
+            let data = dataFormatter.string(from: ordemDia3[indexPath.row].1)
+            cell.cellLabel.text = ordemDia3[indexPath.row].0 + " " + data
         }
         else
         if(indexPath.section == 3){
-            cell.cellLabel.text = ordemDia7[indexPath.row].0
+            let data = dataFormatter.string(from: ordemDia7[indexPath.row].1)
+            cell.cellLabel.text = ordemDia7[indexPath.row].0 + " " + data
         }
         
     
