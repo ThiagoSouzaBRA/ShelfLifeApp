@@ -61,7 +61,10 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
            
         alertNome.isHidden = true
         alertCategoria.isHidden = true
-        datePicker?.date = Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        inputDate.text = dateFormatter.string(from: datePicker!.date)
         
           
        }
