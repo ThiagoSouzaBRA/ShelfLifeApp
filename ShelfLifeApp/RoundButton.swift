@@ -11,14 +11,12 @@ import UIKit
 @IBDesignable class RoundButton: UIButton
 {
 
-    
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         
         updateCornerRadius()
     }
-    
     
     @IBInspectable var rounded: Bool = false {
         didSet {
