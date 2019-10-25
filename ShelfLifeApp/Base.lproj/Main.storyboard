@@ -684,6 +684,7 @@
         <image name="warning-2" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="YGt-40-jrm"/>
         <segue reference="ApX-VO-7tC"/>
         <segue reference="R8h-fL-Z4Q"/>
     </inferredMetricsTieBreakers>

@@ -115,6 +115,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     //table  view
     
 
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -167,8 +168,13 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
     {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "Arial", size: 35)!
+        header.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 32)!
         header.textLabel?.textColor = UIColor.black
+        
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.contentView.backgroundColor = #colorLiteral(red: 0.137254902, green: 0.1960784314, blue: 0.2274509804, alpha: 0.9061697346)
+            headerView.textLabel?.textColor = .white
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -253,10 +259,17 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
        
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
+        
         if editingStyle == .delete {
+            
+            produtosArray.remove(at: indexPath.row)
+            context.delete(produtosArray[indexPath.row])
             
             do {
                 try context.save()
+                self.fetchData()
+                self.table.reloadData()
+                
             } catch let error as NSError {
                 print("Error While Deleting Note: \(error.userInfo)")
             }
