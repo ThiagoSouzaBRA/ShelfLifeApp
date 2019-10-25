@@ -172,7 +172,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         header.textLabel?.textColor = UIColor.black
         
         if let headerView = view as? UITableViewHeaderFooterView {
-            headerView.contentView.backgroundColor = #colorLiteral(red: 0.137254902, green: 0.1960784314, blue: 0.2274509804, alpha: 0.7445954623)
+            headerView.contentView.backgroundColor = #colorLiteral(red: 0.2392160296, green: 0.3485338986, blue: 0.40531528, alpha: 0.7445954623)
             headerView.textLabel?.textColor = .white
         }
     }
@@ -203,6 +203,7 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
             let data = dataFormatter.string(from: ordemHoje[indexPath.row].1)
             cell.cellLabel.text = ordemHoje[indexPath.row].0 
             cell.dataLabel.text = data
+            cell.cellLabel.textColor = UIColor.red
             }
         }
         else
