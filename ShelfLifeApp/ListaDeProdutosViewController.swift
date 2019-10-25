@@ -16,6 +16,8 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
     
     var identificadorCat = 0
     
+    var titulo:String = "Tela"
+    
     var lista:[(String,Date,Date)] = []
     var ordemLista:[(String,Date,Date)] = []
     
@@ -26,6 +28,9 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        self.title = titulo
+        //self.navigationItem.title = "Meu"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +67,9 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
                     }
                     else // Itens Vencidos
                     if(identificadorCat == 4){
-                        
+                        if(produtosArray2[i].dataValidade! < Date()){
+                             lista.append((produtosArray2[i].nome!,produtosArray2[i].dataValidade!,produtosArray2[i].dataRegistro!))
+                        }
                     }
                     else // Outros
                     if(identificadorCat == 5 && produtosArray2[i].categoria == 5){
@@ -80,7 +87,7 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
         //Adicionados Recentemente
         if(identificadorCat == 1){
              ordemLista = lista.sorted { (e1, e2) -> Bool in
-                       e1.2 < e2.2
+                       e1.2 > e2.2
                    }
         }
         else //Itens Vencidos
@@ -133,9 +140,13 @@ class ListaDeProdutosViewController: UIViewController, UITableViewDataSource, UI
         let cell2 = table2.dequeueReusableCell(withIdentifier: "cell2") as! ListaProdutosTableViewCell;
         
         if(lista.count == 0){
-            cell2.produtoLabel.text = "Não há produtos cadastrados."
+            cell2.produtoLabel.text = "Não há produtos."
             cell2.dataOutlet.text = ""
             return(cell2)
+        }
+        
+        if(identificadorCat == 4){
+            cell2.produtoLabel.textColor = UIColor.red
         }
         
         let record = ordemLista[indexPath.row]
