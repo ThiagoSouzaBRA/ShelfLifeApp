@@ -57,7 +57,6 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
            
         alertNome.isHidden = true
         alertCategoria.isHidden = true
-        
         datePicker?.date = Date()
           
        }
