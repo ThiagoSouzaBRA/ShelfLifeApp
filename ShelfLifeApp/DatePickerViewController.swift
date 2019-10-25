@@ -16,13 +16,16 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     var pickOption = ["Geladeira", "Despensa", "Outros"]
     
+    
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var alertNome: UILabel!
     
+    @IBOutlet weak var alertData: UILabel!
     
     @IBOutlet weak var alertCategoria: UILabel!
     
+    @IBOutlet weak var alertWhitelist: UILabel!
     
     //customizacao validade input
     @IBOutlet weak var inputNome: UITextField!{
@@ -57,7 +60,8 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
            
         alertNome.isHidden = true
         alertCategoria.isHidden = true
-        datePicker?.date = Date()
+        alertData.isHidden = true
+        
           
        }
     
@@ -102,59 +106,87 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
 //BOTAO SALVAR
     @IBAction func saveButton(_ sender: Any) {
         
-    
+        alertWhitelist.isHidden = true
+        alertNome.isHidden = true
+        alertCategoria.isHidden = true
+        alertData.isHidden = true
+        
         //pegando os valores dos textfields
         let isNullNome = (self.nomeInput!.text == "")
         let isNullCategoria = (self.categoriaOutlet.text! == "")
+        let isNullValidade = (self.inputDate.text! == "")
        
-        if(isNullNome == true && isNullCategoria == true){
+        if(isNullNome == true && isNullCategoria == true && isNullValidade == true){
             alertNome.isHidden = false
             alertCategoria.isHidden = false
+            alertData.isHidden = false
         }
         else
         if(isNullNome == true){
             alertNome.isHidden = false
             alertCategoria.isHidden = true
+            alertData.isHidden = true
         }
         else
         if(isNullCategoria == true){
             alertCategoria.isHidden = false
             alertNome.isHidden = true
+            alertData.isHidden = true
+        }else
+        if(isNullValidade){
+            alertData.isHidden = false
+            alertCategoria.isHidden = true
+            alertNome.isHidden = true
         }
         else{
+            //
+            var whitelist = "bobo|".lowercased()
+            var arrayVerify = whitelist.split(separator: "|")
+            
+            var permissionWhitelist = true
+            
+            for i in 0...arrayVerify.count-1{
+                if(self.nomeInput!.text!.lowercased() == arrayVerify[i]){
+                    permissionWhitelist = false
+                }
+            }
+            if(permissionWhitelist == true){
         
-            let novoProduto = NSEntityDescription.insertNewObject(forEntityName: "Produto", into: context)
-            
-            novoProduto.setValue(self.nomeInput!.text, forKey: "nome")
-            novoProduto.setValue(self.datePicker?.date, forKey: "dataValidade")
-            if(self.categoriaOutlet!.text! == "Geladeira"){
-                novoProduto.setValue(2, forKey: "categoria")
-            }
-            else
-            if(self.categoriaOutlet!.text! == "Despensa"){
-                novoProduto.setValue(3, forKey: "categoria")
-            }
-            else
-            if(self.categoriaOutlet!.text! == "Outros"){
-                novoProduto.setValue(4, forKey: "categoria")
-            }
-            
-            
-           novoProduto.setValue(Date(), forKey: "dataRegistro")
-            
-            do{
-                try context.save()
-                self.nomeInput!.text = ""
-                self.categoriaOutlet!.text = ""
-
-                print("Produto Cadastrado com sucesso.")
-                alertCategoria.isHidden = true
-                alertNome.isHidden = true
+                let novoProduto = NSEntityDescription.insertNewObject(forEntityName: "Produto", into: context)
                 
-            }catch{
-                print(error)
+                novoProduto.setValue(self.nomeInput!.text, forKey: "nome")
+                novoProduto.setValue(self.datePicker?.date, forKey: "dataValidade")
+                if(self.categoriaOutlet!.text! == "Geladeira"){
+                    novoProduto.setValue(2, forKey: "categoria")
+                }
+                else
+                if(self.categoriaOutlet!.text! == "Despensa"){
+                    novoProduto.setValue(3, forKey: "categoria")
+                }
+                else
+                if(self.categoriaOutlet!.text! == "Outros"){
+                    novoProduto.setValue(4, forKey: "categoria")
+                }
+                
+                
+               novoProduto.setValue(Date(), forKey: "dataRegistro")
+                
+                do{
+                    try context.save()
+                    self.nomeInput!.text = ""
+                    self.categoriaOutlet!.text = ""
+
+                    print("Produto Cadastrado com sucesso.")
+                    alertCategoria.isHidden = true
+                    alertNome.isHidden = true
+                    
+                }catch{
+                    print(error)
+                }
             }
-        
+            else{
+                alertWhitelist.isHidden = false
+            }
         }
         
     }

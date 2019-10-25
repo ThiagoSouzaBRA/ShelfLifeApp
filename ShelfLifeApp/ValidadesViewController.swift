@@ -57,12 +57,12 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
 
     
     func loadPackage(){
-
+        hoje = []
+        amanha = []
+        dia3 = []
+        dia7 = []
         if produtosArray.count > 0 {
-            hoje = []
-            amanha = []
-            dia3 = []
-            dia7 = []
+            
                 for i in 0...(produtosArray.count-1){
                     let dado = produtosArray[i]
                     
@@ -129,23 +129,23 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if(section == 0){
-            if(hoje.count == 0){return 1}
+//            if(hoje.count == 0){return 1}
             return hoje.count
             
         }
         else
         if(section == 1){
-            if(amanha.count == 0){return 1}
+//            if(amanha.count == 0){return 1}
             return amanha.count
         }
         else
         if(section == 2){
-            if(dia3.count == 0){return 1}
+//            if(dia3.count == 0){return 1}
             return dia3.count
         }
         else
         if(section == 3){
-            if(dia7.count == 0){return 1}
+//            if(dia7.count == 0){return 1}
             return dia7.count
         }
         return 1
@@ -168,11 +168,11 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
     {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 32)!
+        header.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 28)!
         header.textLabel?.textColor = UIColor.black
         
         if let headerView = view as? UITableViewHeaderFooterView {
-            headerView.contentView.backgroundColor = #colorLiteral(red: 0.137254902, green: 0.1960784314, blue: 0.2274509804, alpha: 0.9061697346)
+            headerView.contentView.backgroundColor = #colorLiteral(red: 0.137254902, green: 0.1960784314, blue: 0.2274509804, alpha: 0.7445954623)
             headerView.textLabel?.textColor = .white
         }
     }
@@ -261,9 +261,29 @@ class ValidadesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         
         if editingStyle == .delete {
-            
-            produtosArray.remove(at: indexPath.row)
-            context.delete(produtosArray[indexPath.row])
+            var tuplaMaluca:(String,Date,Int)
+            switch indexPath.section{
+            case 0:
+                tuplaMaluca = ordemHoje[indexPath.row]
+                break
+            case 1:
+                tuplaMaluca = ordemAmanha[indexPath.row]
+                break
+            case 2:
+                tuplaMaluca = ordemDia3[indexPath.row]
+                break
+            default:
+                tuplaMaluca = ordemDia7[indexPath.row]
+                break
+            }
+            let indexToRemove = produtosArray.firstIndex { (prod) -> Bool in
+                prod.nome == tuplaMaluca.0 && prod.dataValidade == tuplaMaluca.1
+            }
+            context.delete(produtosArray[indexToRemove!])
+            produtosArray.remove(at: indexToRemove!)
+            loadPackage()
+            sortPackages()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
             
             do {
                 try context.save()
