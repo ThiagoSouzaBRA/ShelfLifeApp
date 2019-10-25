@@ -16,11 +16,19 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     var pickOption = ["Geladeira", "Despensa", "Outros"]
     
+    let whitelist = "bobo|".lowercased()
+    let arrayVerify = whitelist.split(separator: "|")
+    
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    @IBOutlet weak var alertNome: UILabel!
     
     
-//customizacao validade input
+    @IBOutlet weak var alertCategoria: UILabel!
+    
+    @IBOutlet weak var alertWhitelist: UILabel!
+    
+    //customizacao validade input
     @IBOutlet weak var inputNome: UITextField!{
         didSet {
             inputNome.tintColor = UIColor.black
@@ -49,12 +57,21 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     private var datePicker: UIDatePicker?
     
+    override func viewWillAppear(_ animated: Bool) {
+           
+        alertNome.isHidden = true
+        alertCategoria.isHidden = true
+        datePicker?.date = Date()
+        
+          
+       }
     
 //date picker
     override func viewDidLoad() {
         super.viewDidLoad()
         
         datePicker = UIDatePicker()
+        datePicker?.minimumDate = Date()
         datePicker?.datePickerMode = .date
         datePicker?.addTarget(self, action: #selector(dateChanged(datePicker:)), for: .valueChanged)
         
@@ -90,39 +107,75 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
 //BOTAO SALVAR
     @IBAction func saveButton(_ sender: Any) {
         
+        alertWhitelist.isHidden = true
+        alertNome.isHidden = true
+        alertCategoria.isHidden = true
+        
         //pegando os valores dos textfields
-        
-        let nome = self.nomeInput!.text
-        let dataValidade = self.datePicker?.date
-        let categoria = Int(self.categoriaOutlet.text!)
-        
-        let novoProduto = NSEntityDescription.insertNewObject(forEntityName: "Produto", into: context)
-        
-        novoProduto.setValue(self.nomeInput!.text, forKey: "nome")
-        novoProduto.setValue(self.datePicker?.date, forKey: "dataValidade")
-        if(self.categoriaOutlet!.text! == "Geladeira"){
-            novoProduto.setValue(2, forKey: "categoria")
+        let isNullNome = (self.nomeInput!.text == "")
+        let isNullCategoria = (self.categoriaOutlet.text! == "")
+       
+        if(isNullNome == true && isNullCategoria == true){
+            alertNome.isHidden = false
+            alertCategoria.isHidden = false
         }
         else
-        if(self.categoriaOutlet!.text! == "Despensa"){
-            novoProduto.setValue(3, forKey: "categoria")
+        if(isNullNome == true){
+            alertNome.isHidden = false
+            alertCategoria.isHidden = true
         }
         else
-        if(self.categoriaOutlet!.text! == "Outros"){
-            novoProduto.setValue(4, forKey: "categoria")
+        if(isNullCategoria == true){
+            alertCategoria.isHidden = false
+            alertNome.isHidden = true
         }
-        
-       novoProduto.setValue(Date(), forKey: "dataRegistro")
-        
-        do{
-            try context.save()
-            self.nomeInput!.text = ""
-            self.categoriaOutlet!.text = ""
-
-            print("OK")
+        else{
+            //
             
-        }catch{
-            print(error)
+            var permissionWhitelist = true
+            
+            for i in 0...arrayVerify.count-1{
+                if(self.nomeInput!.text!.lowercased() == arrayVerify[i]){
+                    permissionWhitelist = false
+                }
+            }
+            if(permissionWhitelist == true){
+        
+                let novoProduto = NSEntityDescription.insertNewObject(forEntityName: "Produto", into: context)
+                
+                novoProduto.setValue(self.nomeInput!.text, forKey: "nome")
+                novoProduto.setValue(self.datePicker?.date, forKey: "dataValidade")
+                if(self.categoriaOutlet!.text! == "Geladeira"){
+                    novoProduto.setValue(2, forKey: "categoria")
+                }
+                else
+                if(self.categoriaOutlet!.text! == "Despensa"){
+                    novoProduto.setValue(3, forKey: "categoria")
+                }
+                else
+                if(self.categoriaOutlet!.text! == "Outros"){
+                    novoProduto.setValue(4, forKey: "categoria")
+                }
+                
+                
+               novoProduto.setValue(Date(), forKey: "dataRegistro")
+                
+                do{
+                    try context.save()
+                    self.nomeInput!.text = ""
+                    self.categoriaOutlet!.text = ""
+
+                    print("Produto Cadastrado com sucesso.")
+                    alertCategoria.isHidden = true
+                    alertNome.isHidden = true
+                    
+                }catch{
+                    print(error)
+                }
+            }
+            else{
+                alertWhitelist.isHidden = false
+            }
         }
         
     }

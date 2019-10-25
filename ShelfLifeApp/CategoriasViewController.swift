@@ -50,7 +50,7 @@ class CategoriasViewController: UIViewController {
                 let controller = segue.destination as! ListaDeProdutosViewController
                        
             controller.identificadorCat = 4
-            controller.titulo = "Itens Venciados"
+            controller.titulo = "Itens Vencidos"
                }
         if segue.identifier == "Outros"{
          let controller = segue.destination as! ListaDeProdutosViewController
