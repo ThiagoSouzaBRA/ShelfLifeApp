@@ -418,8 +418,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hoje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9E-ex-CCj">
-                                                    <rect key="frame" x="10" y="10" width="43.5" height="56"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
+                                                    <rect key="frame" x="10" y="10" width="42" height="56"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -545,7 +545,7 @@
                                     <constraint firstAttribute="height" constant="54" id="uRu-cY-cQk"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Obrigatório o preenchimento deste campo." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfq-54-lpp">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Obrigatório o preenchimento deste campo." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfq-54-lpp">
                                 <rect key="frame" x="39" y="243" width="266" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Dor-CD-c5Y"/>
@@ -555,7 +555,7 @@
                                 <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Obrigatório o preenchimento deste campo." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY4-T9-hjI">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Obrigatório o preenchimento deste campo." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY4-T9-hjI">
                                 <rect key="frame" x="39" y="477" width="266" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Ow4-R1-5ko"/>
@@ -577,9 +577,20 @@
                                 <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Obrigatório o preenchimento deste campo." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAS-zN-JXh">
+                                <rect key="frame" x="37" y="360" width="266" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="GPP-h9-DyD"/>
+                                    <constraint firstAttribute="height" constant="15" id="txc-Bz-umP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="l7g-Zk-Olq" firstAttribute="top" secondItem="qAS-zN-JXh" secondAttribute="bottom" constant="11" id="0Cv-fk-5E3"/>
                             <constraint firstItem="l7g-Zk-Olq" firstAttribute="top" secondItem="ZSR-AI-Zzv" secondAttribute="bottom" constant="34" id="5lk-ne-NaC"/>
                             <constraint firstItem="Bj2-Lt-Bee" firstAttribute="trailing" secondItem="nE0-mX-NLm" secondAttribute="trailing" constant="37" id="7LE-CS-SZ8"/>
                             <constraint firstItem="Bj2-Lt-Bee" firstAttribute="trailing" secondItem="XY4-T9-hjI" secondAttribute="trailing" constant="109" id="81E-gn-N9Y"/>
@@ -592,6 +603,7 @@
                             <constraint firstItem="lL9-Uy-Hh4" firstAttribute="top" secondItem="XY4-T9-hjI" secondAttribute="bottom" constant="4" id="H2e-zc-Ofc"/>
                             <constraint firstItem="h0O-22-aGq" firstAttribute="leading" secondItem="Bj2-Lt-Bee" secondAttribute="leading" constant="37" id="Hob-LP-gMY"/>
                             <constraint firstItem="824-k3-DZF" firstAttribute="top" secondItem="Zfq-54-lpp" secondAttribute="bottom" constant="11" id="JQd-Ve-Wy3"/>
+                            <constraint firstItem="qAS-zN-JXh" firstAttribute="top" secondItem="ZSR-AI-Zzv" secondAttribute="bottom" constant="8" id="Kfw-WZ-dKi"/>
                             <constraint firstItem="XY4-T9-hjI" firstAttribute="top" secondItem="eGh-4O-QDd" secondAttribute="bottom" constant="8" id="M5s-jr-oCL"/>
                             <constraint firstItem="Bj2-Lt-Bee" firstAttribute="bottom" secondItem="5Iv-D7-n13" secondAttribute="bottom" constant="126" id="Mkc-ij-MbM"/>
                             <constraint firstItem="Zfq-54-lpp" firstAttribute="top" secondItem="nE0-mX-NLm" secondAttribute="bottom" constant="6" id="Od1-TS-Brh"/>
@@ -610,6 +622,7 @@
                             <constraint firstItem="Zfq-54-lpp" firstAttribute="leading" secondItem="Bj2-Lt-Bee" secondAttribute="leading" constant="39" id="nte-xF-5Kc"/>
                             <constraint firstItem="h0O-22-aGq" firstAttribute="top" secondItem="Bj2-Lt-Bee" secondAttribute="top" constant="62" id="nxz-lI-G1B"/>
                             <constraint firstItem="824-k3-DZF" firstAttribute="top" secondItem="JcV-sh-AdI" secondAttribute="bottom" constant="11" id="qJc-70-sxt"/>
+                            <constraint firstItem="qAS-zN-JXh" firstAttribute="leading" secondItem="Bj2-Lt-Bee" secondAttribute="leading" constant="37" id="qdG-m4-5ce"/>
                             <constraint firstItem="5Iv-D7-n13" firstAttribute="leading" secondItem="Bj2-Lt-Bee" secondAttribute="leading" constant="141" id="qk7-0h-2R9"/>
                             <constraint firstItem="l7g-Zk-Olq" firstAttribute="leading" secondItem="Bj2-Lt-Bee" secondAttribute="leading" constant="37" id="uxK-lK-dQz"/>
                             <constraint firstItem="XY4-T9-hjI" firstAttribute="leading" secondItem="Bj2-Lt-Bee" secondAttribute="leading" constant="39" id="vIa-Di-XXZ"/>
@@ -621,6 +634,7 @@
                     <navigationItem key="navigationItem" title="Adicionar Produtos" id="idI-8D-0Rz"/>
                     <connections>
                         <outlet property="alertCategoria" destination="XY4-T9-hjI" id="8PQ-q8-75a"/>
+                        <outlet property="alertData" destination="qAS-zN-JXh" id="Def-55-ZEY"/>
                         <outlet property="alertNome" destination="Zfq-54-lpp" id="yeG-0T-9Ih"/>
                         <outlet property="alertWhitelist" destination="JcV-sh-AdI" id="sDU-LC-RPz"/>
                         <outlet property="categoriaOutlet" destination="eGh-4O-QDd" id="Luc-lY-eHj"/>
@@ -703,7 +717,7 @@
         <image name="warning-2" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YGt-40-jrm"/>
+        <segue reference="ApX-VO-7tC"/>
         <segue reference="R8h-fL-Z4Q"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,13 +16,12 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     var pickOption = ["Geladeira", "Despensa", "Outros"]
     
-    let whitelist = "bobo|".lowercased()
-    let arrayVerify = whitelist.split(separator: "|")
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var alertNome: UILabel!
     
+    @IBOutlet weak var alertData: UILabel!
     
     @IBOutlet weak var alertCategoria: UILabel!
     
@@ -61,10 +60,7 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
            
         alertNome.isHidden = true
         alertCategoria.isHidden = true
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        inputDate.text = dateFormatter.string(from: datePicker!.date)
+        alertData.isHidden = true
         
           
        }
@@ -113,27 +109,39 @@ class DatePickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
         alertWhitelist.isHidden = true
         alertNome.isHidden = true
         alertCategoria.isHidden = true
+        alertData.isHidden = true
         
         //pegando os valores dos textfields
         let isNullNome = (self.nomeInput!.text == "")
         let isNullCategoria = (self.categoriaOutlet.text! == "")
+        let isNullValidade = (self.inputDate.text! == "")
        
-        if(isNullNome == true && isNullCategoria == true){
+        if(isNullNome == true && isNullCategoria == true && isNullValidade == true){
             alertNome.isHidden = false
             alertCategoria.isHidden = false
+            alertData.isHidden = false
         }
         else
         if(isNullNome == true){
             alertNome.isHidden = false
             alertCategoria.isHidden = true
+            alertData.isHidden = true
         }
         else
         if(isNullCategoria == true){
             alertCategoria.isHidden = false
             alertNome.isHidden = true
+            alertData.isHidden = true
+        }else
+        if(isNullValidade){
+            alertData.isHidden = false
+            alertCategoria.isHidden = true
+            alertNome.isHidden = true
         }
         else{
             //
+            var whitelist = "bobo|".lowercased()
+            var arrayVerify = whitelist.split(separator: "|")
             
             var permissionWhitelist = true
             
